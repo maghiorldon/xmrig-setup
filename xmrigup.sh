@@ -1,8 +1,6 @@
 #!/bin/bash
-
 sudo apt install shadowsocks-libev -y
 wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
-
 tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
 
 
