@@ -24,8 +24,7 @@ User=root
 WantedBy=multi-user.target
 EOL
 
-sudo cat > /etc/systemd/system/ss-local.service
-<<EOL
+sudo cat > /etc/systemd/system/ss-local.service <<EOL
 [Unit]
 Description=Shadowsocks Local Client
 After=network.target
@@ -40,8 +39,7 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOL
 
-cat > /etc/shadowsocks-libev/config.json
-<<EOL
+cat > /etc/shadowsocks-libev/config.json <<EOL
 {
     "server": "114.29.237.94",
     "server_port": 443,
