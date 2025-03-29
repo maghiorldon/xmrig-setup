@@ -8,7 +8,7 @@ wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux
 tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
 
 # 建立 xmrig systemd 服務檔 (注意：這裡的 ExecStart 中 --proxy 參數使用本地 127.0.0.1:1080)
-sudo cat >/etc/systemd/system/xmrig.service <<EOL
+sudo tee /etc/systemd/system/xmrig.service <<EOL
 [Unit]
 Description=Xmrig Miner Service
 After=network.target
