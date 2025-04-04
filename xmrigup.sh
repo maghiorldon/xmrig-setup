@@ -8,14 +8,32 @@ wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux
 tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
 
 # 建立 xmrig systemd 服務檔 (注意：這裡的 ExecStart 中 --proxy 參數使用本地 127.0.0.1:1080)
-sudo cat >/etc/systemd/system/xmrig.service <<EOL
+sudo cat >/etc/systemd/system/xmrig1.service <<EOL
 [Unit]
 Description=Xmrig Miner Service
 After=network.target
 
 [Service]
 WorkingDirectory=/home/ubuntu/xmrig-6.22.2
-ExecStart=/home/ubuntu/xmrig-6.22.2/xmrig -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080
+ExecStart=/home/ubuntu/xmrig-6.22.2/xmrig -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080 -t 8 --cpu-affinity 0x5555
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=xmrig
+User=root
+
+[Install]
+WantedBy=multi-user.target
+EOL
+
+sudo cat >/etc/systemd/system/xmrig2.service <<EOL
+[Unit]
+Description=Xmrig Miner Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/ubuntu/xmrig-6.22.2
+ExecStart=/home/ubuntu/xmrig-6.22.2/xmrig -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080 -t 8 --cpu-affinity 0xAAAA
 Restart=always
 RestartSec=10
 KillSignal=SIGINT
