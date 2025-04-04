@@ -26,23 +26,23 @@ User=root
 WantedBy=multi-user.target
 EOL
 
-sudo cat >/etc/systemd/system/xmrig2.service <<EOL
-[Unit]
-Description=Xmrig Miner Service
-After=network.target
+#sudo cat >/etc/systemd/system/xmrig2.service <<EOL
+#[Unit]
+#Description=Xmrig Miner Service
+#After=network.target
 
-[Service]
-WorkingDirectory=/home/ubuntu/xmrig-6.22.2
-ExecStart=/home/ubuntu/xmrig-6.22.2/xmrig -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080 -t 8 --cpu-affinity 0xAAAA
-Restart=always
-RestartSec=10
-KillSignal=SIGINT
-SyslogIdentifier=xmrig
-User=root
+#[Service]
+#WorkingDirectory=/home/ubuntu/xmrig-6.22.2
+#ExecStart=/home/ubuntu/xmrig-6.22.2/xmrig -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080 -t 8 --cpu-affinity 0xAAAA
+#Restart=always
+#RestartSec=10
+#KillSignal=SIGINT
+#SyslogIdentifier=xmrig
+#User=root
 
-[Install]
-WantedBy=multi-user.target
-EOL
+#[Install]
+#WantedBy=multi-user.target
+#EOL
 
 # 建立 ss-local systemd 服務檔
 sudo cat >/etc/systemd/system/ss-local.service <<EOL
@@ -79,8 +79,8 @@ sudo systemctl daemon-reload
 
 # 啟用並啟動服務 (注意：服務名稱修正為 ss-local.service)
 sudo systemctl enable xmrig1.service
-sudo systemctl enable xmrig2.service
+#sudo systemctl enable xmrig2.service
 sudo systemctl enable ss-local.service
 sudo systemctl start ss-local.service
 sudo systemctl start xmrig1.service
-sudo systemctl start xmrig2.service
+#sudo systemctl start xmrig2.service
