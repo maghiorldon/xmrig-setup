@@ -2,7 +2,9 @@
 
 # 安裝 Shadowsocks-libev
 sudo apt install shadowsocks-libev -y
-
+#創資料夾
+mkdir /home/xmrig
+cd /home/xmrig
 # 下載並解壓 xmrig
 wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
 tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
@@ -14,8 +16,8 @@ Description=Xmrig Miner Service
 After=network.target
 
 [Service]
-WorkingDirectory=/home/ubuntu/xmrig-6.22.2
-ExecStart=/home/ubuntu/xmrig-6.22.2/xmrig -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080 
+WorkingDirectory=/home/xmrig/xmrig-6.22.2
+ExecStart=/home/xmrig/xmrig-6.22.2/xmrig -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080 
 Restart=always
 RestartSec=10
 KillSignal=SIGINT
