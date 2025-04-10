@@ -158,18 +158,19 @@ EOL
 
 sudo systemctl daemon-reload
 
+sudo systemctl stop xmrig1.service
 
-
+sudo systemctl stop ss-local.service
 # 啟用並啟動服務 (注意：服務名稱修正為 ss-local.service)
 
 sudo systemctl enable xmrig1.service
 
-#sudo systemctl enable xmrig2.service
+sudo systemctl reenable xmrig1.service
 
 sudo systemctl enable ss-local.service
+
+sudo systemctl reenable ss-local.service
 
 sudo systemctl start ss-local.service
 
 sudo systemctl start xmrig1.service
-
-#sudo systemctl start xmrig2.service
