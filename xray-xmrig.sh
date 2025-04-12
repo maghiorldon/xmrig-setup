@@ -11,7 +11,7 @@ sudo cat > /usr/local/etc/xray/config.json<<EOL
       "settings": {
         "clients": [
           {
-            "id": "888a2315-c76d-4a94-a83a-50dd22a744fe" // 請替換成你產生的 UUI
+            "id": "7f917c60-7486-46af-816c-a43fe4584be1" // 請替換成你產生的 uuidgen
             }
         ],
         "decryption": "none"
