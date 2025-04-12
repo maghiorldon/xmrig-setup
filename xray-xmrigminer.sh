@@ -39,7 +39,7 @@ After=network.target
 [Service]
 ExecStart=/usr/local/bin/xray run -c /home/xray/xray-config.json
 Restart=on-failure
-User=youruser
+User=root
 LimitNOFILE=65535
 
 [Install]
