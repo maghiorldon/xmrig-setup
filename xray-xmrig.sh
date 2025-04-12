@@ -11,9 +11,8 @@ sudo cat > /usr/local/etc/xray/config.json<<EOL
       "settings": {
         "clients": [
           {
-            "id": "888a2315-c76d-4a94-a83a-50dd22a744fe",  // 請替換成你產生的 UUID
-            "flow": "xtls-rprx-direct"                      // Reality 預設使用的 flow（可依需求調整）
-          }
+            "id": "888a2315-c76d-4a94-a83a-50dd22a744fe" // 請替換成你產生的 UUI
+            }
         ],
         "decryption": "none"
       },
@@ -25,7 +24,7 @@ sudo cat > /usr/local/etc/xray/config.json<<EOL
           "dest": "www.chatgpt.com:443",       // 用來混淆的目標地址，可替換成其他常見網站（或 CDN 背後的站點）
           "xver": 0,
           "serverNames": [],                // 如果有指定假裝的主機名，可在此填入，如 ["www.bing.com"]
-          "privateKey": "MHcCAQEEIIzQixEcBWWU8UleIKD4CJapIu3hFr4LEf9rJFS79Hv8oAoGCCqGSM49AwEHoUQDQgAE/QcIIasP8fH/LUy6Z3ESt2NjVAZvdIHcoI8PbUDQyuWWz44XCBVssnH0JM7bjzGsnxxPQbE+ZOWikq+gk13Ztw==",  // 你必須生成並放入你的 Reality 私鑰
+          "privateKey": "",  // 你必須生成並放入你的 Reality 私鑰 指令：xray x25519
           "shortIds": ["abcd1234"]          // 一組短 ID，作為流量混淆標識，可自定義（建議使用 8 位英數字串）
         },
         "tcpSettings": {
