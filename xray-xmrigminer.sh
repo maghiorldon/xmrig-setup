@@ -13,7 +13,7 @@ wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux
 tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
 
 
-sudo   cat >/etc/systemd/system/xmrig.service <<EOL
+sudo   cat >/etc/systemd/system/xmrig.service<<EOL
 [Unit]
 Description=xmrig
 
