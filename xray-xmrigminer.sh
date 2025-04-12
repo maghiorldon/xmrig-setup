@@ -31,8 +31,7 @@ User=root
 WantedBy=multi-user.target
 EOL
 
-sudo cat > /etc/systemd/system/xray-client.service
-<<EOL
+sudo cat > /etc/systemd/system/xray-client.service<<EOL
 [Unit]
 Description=Xray Client Service
 After=network.target
@@ -48,8 +47,7 @@ WantedBy=multi-user.target
 EOL
 
 
-sudo cat > /home/xray/xray-config.json
-<<EOL
+sudo cat > /home/xray/xray-config.json<<EOL
 {
   "inbounds": [
     {
