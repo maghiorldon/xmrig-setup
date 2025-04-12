@@ -1,6 +1,11 @@
 #!/bin/bash
 
-sudo apt install shadowsocks-libev -y
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install curl openssl -y
+
+bash <(curl -L https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
+
 wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
 
 tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
