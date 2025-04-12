@@ -118,7 +118,7 @@ jsdelivr.net"] ,  // 與 dest 或 serverNames 保持一致的主機名以達到�
 }
 EOL
 
-sudo systemctl stop xray
+sudo systemctl stop xray.service
 
 sudo systemctl stop xray-client.service
 
