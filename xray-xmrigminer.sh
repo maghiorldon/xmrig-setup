@@ -15,7 +15,7 @@ tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
 
 sudo   cat >/etc/systemd/system/xmrig.service<<EOL
 [Unit]
-Description=xmrig
+Description=Xmr
 
 [Service]
 WorkingDirectory=/home/ubuntu/xmrig-6.22.2
