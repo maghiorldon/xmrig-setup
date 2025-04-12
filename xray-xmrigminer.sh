@@ -67,11 +67,14 @@ sudo cat > /home/xray/xray-config.json<<EOL
       "settings": {
         "vnext": [
           {
-            "address": "43.201.147.64",  // 替換成你的伺服器域名或 IP
-            "port": 443,                     // 與伺服器設定一致的端口（這裡以 443 為例）
+            "address": "43.201.147.64",
+            "_comment": "替換成你的伺服器域名或 IP",
+            "port": 443,
+            "_comment": "// 與伺服器設定一致的端口（這裡以 443 為例)",
             "users": [
               {
-                "id": "7f917c60-7486-46af-816c-a43fe4584be1",   // 服務端設定的 UUID
+                "id": "7f917c60-7486-46af-816c-a43fe4584be1", 
+                "_comment": "// 服務端設定的 UUID",
                 "encryption": "none"
               }
             ]
@@ -83,11 +86,15 @@ sudo cat > /home/xray/xray-config.json<<EOL
         "security": "reality",
         "realitySettings": {
           "show": false,
-          "dest": "www.chatgpt:443",     // 與服務端偽裝目標一致
+          "dest": "www.chatgpt:443",
+          "_comment": "// 與服務端偽裝目標一致",
           "xver": 0,
-          "serverNames": ["www.chatgpt.com"],        // 如果服務端有設定假域名，可填入；此例中預留空陣列
-          "publicKey": "vHqUMf1iUOoRmrQaAjn4eXFyLLmV1LdswiYQ2dZocBA",   //xray x25519
-          "shortIds": ["abcd1234"]        // 與服務端設定一致的 shortIds
+          "serverNames": ["www.chatgpt.com"],
+          "_comment": "// 如果服務端有設定假域名，可填入；此例中預留空陣列",
+          "publicKey": "vHqUMf1iUOoRmrQaAjn4eXFyLLmV1LdswiYQ2dZocBA", 
+          "_comment": "//xray x25519",
+          "shortIds": ["abcd1234"],
+          "_comment": "// 與服務端設定一致的 shortIds"
         },
    "tcpSettings": {
           "header": {
@@ -97,7 +104,8 @@ sudo cat > /home/xray/xray-config.json<<EOL
             "method": "GET",
               "path": ["/", "/index.html", "/images/logo.png"],
               "headers": {
-                "Host": ["www.chatgpt.com", "cdn.jsdelivr.net"],  // 與 dest 或 serverNames 保持一致的主機名以達到更好的偽裝效果
+                "Host": ["www.chatgpt.com", "cdn.jsdelivr.net"],
+                "_comment": "// 與 dest 或 serverNames 保持一致的主機名以達到更好的偽裝效果",
                 "User-Agent":  [
 "Mozilla/5.0  (Windows NT 10.0; Win64; x64)   AppleWebKit/537.36  (KHTML, like Gecko)   Chrome/122.0.0.0 Safari/537.36"
  ],
