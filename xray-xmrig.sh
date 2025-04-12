@@ -24,7 +24,7 @@ sudo cat > /usr/local/etc/xray/config.json<<EOL
           "dest": "www.chatgpt.com:443",       // 用來混淆的目標地址，可替換成其他常見網站（或 CDN 背後的站點）
           "xver": 0,
           "serverNames": ["www.chatgpt.com"],                // 如果有指定假裝的主機名，可在此填入，如 ["www.bing.com"]
-          "privateKey": "",  // 你必須生成並放入你的 Reality 私鑰 指令：xray x25519
+          "privateKey": "AKgbYBGdBtH0TT8CY3JXUJM2IJcMN3dcqKHFanPf9EE",  // 你必須生成並放入你的 Reality 私鑰 指令：xray x25519
           "shortIds": ["abcd1234"]          // 一組短 ID，作為流量混淆標識，可自定義（建議使用 8 位英數字串）
         },
         "tcpSettings": {
