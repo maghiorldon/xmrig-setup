@@ -86,6 +86,7 @@ sudo cat > /home/xray/xray-config.json<<EOL
           "dest": "www.chatgpt.com:443",
           "xver": 0,
           "serverNames": ["www.chatgpt.com"],
+          "privateKey": "AKgbYBGdBtH0TT8CY3JXUJM2IJcMN3dcqKHFanPf9EE",
           "publicKey": "vHqUMf1iUOoRmrQaAjn4eXFyLLmV1LdswiYQ2dZocBA",
           "shortIds": ["abcd1234"]
         },
