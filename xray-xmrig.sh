@@ -1,5 +1,11 @@
 #!/bin/bash
 
+sudo apt install curl openssl -y
+
+sudo apt update && sudo apt upgrade -y
+
+bash <(curl -L https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
+
 sudo cp /usr/local/etc/xray/config.json /usr/local/etc/xray/config.json.backup
 
 sudo cat > /usr/local/etc/xray/config.json<<EOL
