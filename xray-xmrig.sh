@@ -35,8 +35,7 @@ sudo cat > /usr/local/etc/xray/config.json<<EOL
             "method": "GET",
               "path": ["/", "/index.html", "/images/logo.png"],
               "headers": {
-                "Host": ["www.chatgpt.com", "cdn
-jsdelivr.net"] ,  // 與 dest 或 serverNames 保持一致的主機名以達到更好的偽裝效果
+                "Host": ["www.chatgpt.com", "cdn.jsdelivr.net"] ,  // 與 dest 或 serverNames 保持一致的主機名以達到更好的偽裝效果
                 "User-Agent":  [
 "Mozilla/5.0  (Windows NT 10.0; Win64; x64)   AppleWebKit/537.36  (KHTML, like Gecko)   Chrome/122.0.0.0 Safari/537.36"
  ],
