@@ -1,8 +1,10 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 
 sudo apt install curl openssl -y
+
+sudo mkdir /home/xray
 
 bash <(curl -L https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
 
@@ -45,9 +47,8 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOL
 
-mkdir /home/xray
 
-cat > /home/xray/xray-config.json
+sudo cat > /home/xray/xray-config.json
 <<EOL
 {
   "inbounds": [
