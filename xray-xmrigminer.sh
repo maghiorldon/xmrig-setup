@@ -15,13 +15,13 @@ tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
 
 sudo   cat >/etc/systemd/system/xmrig.service<<EOL
 [Unit]
-Description=Xmr
+Description=Xmrig Miner Service
+After=network.target
 
 [Service]
-WorkingDirectory=/home/ubuntu/xmrig-6.22.2
-ExecStart=/home/ubuntu/xmrig-6.22.2/xmrig -o 43.201.147.64:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --proxy 127.0.0.1:1080 
+WorkingDirectory=/home/xmrig/xmrig-6.22.2
+ExecStart=/home/xmrig/xmrig-6.22.2/xmrig -o 43.201.147.64:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x --nicehash -k --proxy 127.0.0.1:1080 
 Restart=always
-# Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
 KillSignal=SIGINT
 SyslogIdentifier=xmrig
