@@ -4,6 +4,14 @@ sudo apt install curl openssl -y
 
 sudo apt update && sudo apt upgrade -y
 
+sudo mkdir /home/proxy
+
+cd /home/proxy
+
+wget https://github.com/xmrig/xmrig-proxy/releases/download/v6.22.0/xmrig-proxy-6.22.0-linux-static-x64.tar.gz
+
+tar xzfv xmrig-proxy-6.22.0-linux-static-x64.tar.gz
+
 bash <(curl -L https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
 
 sudo cp /usr/local/etc/xray/config.json /usr/local/etc/xray/config.json.backup
@@ -71,8 +79,8 @@ Description=XMRig Proxy Service
 After=network.target
 
 [Service]
-ExecStart=/root/xmrig-proxy-6.22.0/xmrig-proxy -o xmr-asia1.nanopool.org:10343 --coin monero --bind 0.0.0.0:3333 -m simple -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p 001 -k --tls
-WorkingDirectory=/root/xmrig-proxy-6.22.0
+ExecStart=/home/proxy/xmrig-proxy-6.22.0/xmrig-proxy -o xmr-asia1.nanopool.org:10343 --coin monero --bind 0.0.0.0:3333 -m simple -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p 001 -k --tls
+WorkingDirectory=/home/proxy/xmrig-proxy-6.22.0
 User=root
 Group=root
 Restart=always
