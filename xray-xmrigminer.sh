@@ -8,10 +8,11 @@ sudo mkdir /home/xray
 
 bash <(curl -L https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
 
+mkdir /home/xmrig
+cd /home/xmrig
+# 下載並解壓 xmrig
 wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
-
 tar xzfv xmrig-6.22.2-linux-static-x64.tar.gz
-
 
 sudo   cat >/etc/systemd/system/xmrig.service<<EOL
 [Unit]
