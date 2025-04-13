@@ -12,7 +12,8 @@ sudo cat > /usr/local/etc/xray/config.json<<EOL
 {
   "inbounds": [
     {
-      "port": 443,                            
+      "port": 443, 
+      "protocol": "vless",
       "settings": {
         "clients": [
           {
