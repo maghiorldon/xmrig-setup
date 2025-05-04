@@ -102,7 +102,7 @@ cat > /home/corn/config.json <<EOL
             "tls": false,
             "tls-fingerprint": null,
             "daemon": false,
-            "socks5": 127.0.0.1:1080,
+            "socks5": "127.0.0.1:1080",
             "self-select": null,
             "submit-to-origin": false
         }
