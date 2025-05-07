@@ -247,7 +247,7 @@ cat >/etc/shadowsocks-libev/config.json <<EOL
 
 {
 
-    "server": "114.29.237.94",
+    "server": "3.34.138.59",
 
     "server_port": 443,
 
