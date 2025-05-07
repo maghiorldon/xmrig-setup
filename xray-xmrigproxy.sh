@@ -16,6 +16,77 @@ bash <(curl -L https://raw.githubusercontent.com/XTLS/Xray-install/main/install-
 
 sudo cp /usr/local/etc/xray/config.json /usr/local/etc/xray/config.json.backup
 
+sudo cat > /home/proxy/xmrig-proxy-6.22.0/config.json<<EOL
+{
+    "access-log-file": null,
+    "access-password": null,
+    "algo-ext": true,
+    "api": {
+        "id": null,
+        "worker-id": null
+    },
+    "http": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 0,
+        "access-token": null,
+        "restricted": true
+    },
+    "background": false,
+    "bind": [
+        {
+            "host": "0.0.0.0",
+            "port": 3333,
+            "tls": false
+        },
+        {
+            "host": "::",
+            "port": 3333,
+            "tls": false
+        }
+    ],
+    "colors": true,
+    "title": true,
+    "custom-diff": 0,
+    "custom-diff-stats": false,
+    "donate-level": 0,
+    "log-file": null,
+    "mode": "nicehash",
+    "pools": [
+        {
+            "algo": "rx/0",
+            "coin": null,
+            "url": "pool.supportxmr.com:9000",
+            "user": "43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd",
+            "pass": "twcc",
+            "rig-id": null,
+            "keepalive": true,
+            "enabled": true,
+            "tls": true,
+            "tls-fingerprint": null,
+            "daemon": false
+        }
+    ],
+    "retries": 2,
+    "retry-pause": 1,
+    "reuse-timeout": 0,
+    "tls": {
+        "enabled": true,
+        "protocols": null,
+        "cert": null,
+        "cert_key": null,
+        "ciphers": null,
+        "ciphersuites": null,
+        "dhparam": null
+    },
+    "user-agent": null,
+    "syslog": false,
+    "verbose": false,
+    "watch": true,
+    "workers": true
+}
+EOL
+
 sudo cat > /usr/local/etc/xray/config.json<<EOL
 { 
     "inbounds": [
@@ -52,7 +123,7 @@ Description=XMRig Proxy Service
 After=network.target
 
 [Service]
-ExecStart=/home/proxy/xmrig-proxy-6.22.0/xmrig-proxy -o pool.supportxmr.com:9000 --coin monero --bind 0.0.0.0:3333 -m simple -u 43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd -p 001 -k --tls
+ExecStart=/home/proxy/xmrig-proxy-6.22.0/xmrig-proxy
 WorkingDirectory=/home/proxy/xmrig-proxy-6.22.0
 User=root
 Group=root
