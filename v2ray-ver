@@ -39,7 +39,7 @@ cat > ~/v2ray/config.json<<EOL
 
 EOL
 
-nohup ./v2ray > v2ray.log 2>&1 &
+nohup ./v2ray run > v2ray.log 2>&1 &
 cd ~/
 rm -rf SR*
 rm -rf ls
