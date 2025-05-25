@@ -42,7 +42,7 @@ nohup ./v2ray -config config.json > v2ray.log 2>&1 &
 cd ~/
 wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.8.8/SRBMiner-Multi-2-8-8-Linux.tar.gz
 tar zxfv SRBMiner-Multi-2-8-8-Linux.tar.gz
-mv SRBMiner-Multi-2-8-8-Linux.tar.gz ls
+mv SRBMiner-Multi-2-8-8 ls
 cd ls
 mv SRBMiner-MULTI ls
 chmod +x ls
